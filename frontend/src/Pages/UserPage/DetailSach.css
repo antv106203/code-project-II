@@ -1,0 +1,341 @@
+.header-top{
+    background: #21D375;
+    height: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.header{
+    height: 200px;
+    background: White;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header-bottom{
+    
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.icon-container{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-left: 40px;
+}
+
+.hotro-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.hotro-container marquee{
+    margin-right: 10px;
+}
+
+.tt-container{
+    margin-left: 70px;
+    gap: 30px
+}
+
+
+.logolibrary-container{
+    height: 70%;
+    width: 20%;
+}
+
+.logolibrary-container img{
+    width: 40%;
+    height: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.left-chia{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 10px; 
+    
+}
+
+.left-chia img{
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    
+}
+
+.left-chia input{
+    width: 580px;
+    height: 21px;
+    border: none;
+    border-right: 0.5px solid rgba(128, 128, 128, 0.5);
+    margin-left: 10px;
+}
+
+.left-chia button:hover{
+    background: #BAE8DB;
+}
+
+.left-chia button{
+    border: none;
+    color: rgba(128, 128, 128, 0.5);
+    background-color: white;
+    height: 100%;
+    width: 90px;
+    border-top-right-radius: 10px; /* Góc bo tròn 10 pixel ở trên phải */
+    border-bottom-right-radius: 10px; /* Góc bo tròn 10 pixel ở dưới phải */
+}
+
+.left-chia input:focus{
+    outline: none;
+    box-shadow: none;
+}
+.header-bottom-main{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 90%;
+}
+
+.main-top{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.header-bottom-main-left{
+    height: 100%;
+    width: 60%;
+}
+
+.header-bottom-main-right{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.logo-home-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-right: 0.5px solid rgba(128, 128, 128, 0.5)
+}
+
+logo-home-container a{
+    text-decoration: none;
+}
+
+.logo-home-container:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.logo-home-container a{
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.5);
+    font-weight: 20px;
+    
+}
+
+.logo-taikhoan-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-right: 0.5px solid rgba(128, 128, 128, 0.5);
+    position: relative;
+}
+
+.logo-taikhoan-container:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.logo-taikhoan-container:hover ~ .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.logo-taikhoan-container a{
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.5);
+    font-weight: 50px;
+}
+
+.logo-chopheduyet-container{
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    gap: 2px;
+    
+}
+.logo-chopheduyet-container a{
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.5);
+    font-weight: 50px;
+}
+
+.logo-chopheduyet-container:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.logo-chopheduyet-container i{
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.end{
+    background: #21D375;
+    width: 100%;
+    height: 10px;
+}
+
+.header-center{
+    background: #E6E6E6;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    
+}
+
+.detail-sanpham{
+    width: 300px;
+    height: 570px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: #21D375 0.2px ;
+    box-shadow: 0px 0px 10px 0px #21D375;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.anhcha{
+    
+    width: 240px; /* Đặt chiều rộng ảnh là 200 pixel */
+    height: 300px; /* Để chiều cao tự động điều chỉnh theo tỷ lệ */
+    margin: 20px;
+    border-radius: 10px;
+    border: #21D375 0.2px;
+    box-shadow: 0px 0px 10px 0px grey;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.cacanhcon{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px
+}
+
+.cacanhcon img{
+    width: 100px;
+    height: 100px;
+}
+
+.thongtinsach{
+    background: #ffffff;
+    border-radius: 10px;
+    border: #21D375 0.2px ;
+    box-shadow: 0px 0px 10px 0px #21D375;
+    width: 600px;
+    height: 570px;
+    margin-top: 40px;
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.dangkimuon{
+    background: #ffffff;
+    border-radius: 10px;
+    border: #21D375 0.2px ;
+    box-shadow: 0px 0px 10px 0px #21D375;
+    width: 350px;
+    height: 400px;
+    margin-top: 100px;
+    margin-left: 10px;
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.dangkimuon h4{
+    background: #21D375;
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+    align-items: center;
+}
+
+.soluong{
+    display: flex;
+    flex-direction: row;
+}
+
+.luachonthoihanmuon{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.luachonthoihanmuon select {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #21D375;
+    width: 150px; /* Tăng độ rộng của thanh select */
+    height: 40px;
+  }
+
+.dangkimuon-btn{
+    width: 260px;
+    height: 50px;
+    margin-left:30px;
+    background: #21D375;
+    font-weight: bold;
+    border: none;
+   
+}
+
+.dangkimuon-btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

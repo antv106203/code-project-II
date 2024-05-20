@@ -1,0 +1,9 @@
+.anbutton {
+    cursor: pointer;
+}
+.anbutton:hover {
+    scale: 1.3;
+    transition: 0.3s;
+    border-radius: 100%;
+    background-color: #00000010;
+}

@@ -1,0 +1,422 @@
+.header-top{
+    background: #21D375;
+    height: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.header{
+    height: 200px;
+    background: White;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header-bottom{
+    
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+
+}
+
+.icon-container{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-left: 40px;
+}
+
+.hotro-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.hotro-container marquee{
+    margin-right: 10px;
+}
+
+.tt-container{
+    margin-left: 70px;
+    gap: 30px
+}
+
+
+.logolibrary-container{
+    height: 70%;
+    width: 20%;
+}
+
+.logolibrary-container img{
+    width: 40%;
+    height: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.left-chia{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 10px; 
+    
+}
+
+.left-chia img{
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    
+}
+
+.left-chia input{
+    width: 580px;
+    height: 21px;
+    border: none;
+    border-right: 0.5px solid rgba(128, 128, 128, 0.5);
+    margin-left: 10px;
+}
+
+.left-chia button:hover{
+    background: #BAE8DB;
+}
+
+.left-chia button{
+    border: none;
+    color: rgba(128, 128, 128, 0.5);
+    background-color: white;
+    height: 100%;
+    width: 90px;
+    border-top-right-radius: 10px; /* Góc bo tròn 10 pixel ở trên phải */
+    border-bottom-right-radius: 10px; /* Góc bo tròn 10 pixel ở dưới phải */
+}
+
+.left-chia input:focus{
+    outline: none;
+    box-shadow: none;
+}
+.header-bottom-main{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 90%;
+}
+
+.main-top{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.header-bottom-main-left{
+    height: 100%;
+    width: 60%;
+}
+
+.header-bottom-main-right{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.logo-home-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-right: 0.5px solid rgba(128, 128, 128, 0.5)
+}
+
+logo-home-container a{
+    text-decoration: none;
+}
+
+.logo-home-container:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.logo-home-container a{
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.5);
+    font-weight: 20px;
+    
+}
+
+.logo-taikhoan-container{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-right: 0.5px solid rgba(128, 128, 128, 0.5);
+    position: relative;
+}
+
+.logo-taikhoan-container:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.logo-taikhoan-container:hover ~ .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.logo-taikhoan-container a{
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.5);
+    font-weight: 50px;
+}
+
+.logo-chopheduyet-container{
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    gap: 2px;
+    
+}
+.logo-chopheduyet-container a{
+    font-size: 22px;
+    color: rgba(128, 128, 128, 0.5);
+    font-weight: 50px;
+}
+
+.logo-chopheduyet-container:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.logo-chopheduyet-container i{
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.end{
+    background: #21D375;
+    width: 100%;
+    height: 10px;
+}
+
+
+/*************************************************************************************#E4E1E6***********************/
+
+.header-center{
+    background: #E6E6E6;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+.danhmuc-container{
+    /*height: 100%;*/
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    align-items: center;
+    margin-left: 45px;
+    margin-top: 30px;
+    border-radius: 10px;
+    gap: 20px;
+    height: 700px;  /*Đặt chiều cao của container */
+    overflow-y: auto; /* Cho phép scroll theo chiều dọc */
+    overflow-x: hidden; /* Ẩn scroll theo chiều ngang */
+}
+.Tieu_de {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.muc-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    gap: 10px;
+}
+.muc{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 80%;
+    height: 40px;
+    align-items: center;
+    text-align: center
+
+}
+
+.muc:hover{
+    background: #BAE8DB;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sanpham-container{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.xinchao{
+    background: #21D375;
+    height: 15%;
+    width: 100%;
+    border-radius: 10px;
+    align-items: center;
+    
+    
+}
+
+.xinchao h2{
+    margin-top: 20px;
+    font-size: large;
+    font-family: Arial;
+    font-weight: 200;
+    margin-left: 20px;
+    font-weight: bold;
+    
+}
+
+.banner-sach{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.banner-sach1{
+    margin: 10px;
+    border-radius: 10px;
+    width: 40%;
+    background-color: #ffffff;
+    margin-left: 95px;
+}
+
+.banner-sach2{
+    margin: 10px;
+    border-radius: 10px;
+    width: 40%;
+    background-color: #ffffff;
+}
+
+.sanpham{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #E6E6E6;
+    gap: 20px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.tieude_tatca{
+    width: 100%;
+    background: #21D375;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.item-image {
+    width: 260px;
+    height: 260px; /* Đặt chiều cao bằng chiều rộng để tránh ảnh bị kéo dãn */
+    object-fit: cover; /* Giữ tỷ lệ ảnh và cắt phần dư */
+}
+
+.item{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    gap: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: #21D375  0.2px;
+    box-shadow: 0px 0px 10px 0px #21D375;
+    display: flex;
+    flex-direction: column;
+    height: 450px; 
+}
+
+.item img{
+    margin: 20px;
+}
+.item h5{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tieude_tatca h5{
+    margin-left: 400px;
+}
+
+.item:hover {
+    transform: scale(1.05); /* Phóng to khi hover */
+    cursor: pointer;
+}
+
+.popup{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    position: absolute;
+    top: 85px; 
+    left: 1130px;
+    background: #ffffff;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    gap: 10px;
+    border: #21D375  0.2px;
+    box-shadow: 0px 0px 10px 0px #21D375;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup-item {
+    border-bottom: #21D375  solid 0.2px;
+}
+
