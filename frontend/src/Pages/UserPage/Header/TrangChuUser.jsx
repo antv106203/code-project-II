@@ -21,10 +21,12 @@ const Header = () =>{
     const [dsSach, setDsSach] = useState(listSach);
     const handleLogout = () =>{
         navigate('/');
+        logout();
     }
     
 
     console.log("moi vaotrang selected là:", selected);
+    console.log("danh sách sách:", dsSach);
    
     return(
             <div className='header'>
@@ -79,10 +81,18 @@ const Header = () =>{
                             <div className='header-bottom-main-left'>
                                 <div className='left-chia'>
                                     <img src="https://salt.tikicdn.com/ts/upload/33/d0/37/6fef2e788f00a16dc7d5a1dfc5d0e97a.png" alt="icon-search" />
-                                    <input  type='text' placeholder='Nhập sách cần tìm kiếm' onChange={(e) =>{
+                                    <input  type='text' placeholder='Nhập sách cần tìm kiếm' value= {text} onChange={(e) =>{
+                            
                                         setText(e.target.value);
                                     }}/>
-                                    <button> Tìm kiếm </button>
+                                    <button onClick={() => {
+                                        setType(`Kết quả tìm kiếm cho ${text}`); console.log("type: ", type);
+                                        const ds2  = listSach.filter(sach => sach.tensach.toUpperCase().includes(text.toUpperCase()));
+                                        setDsSach(ds2);
+                                        setText('');
+                                    }}
+                                    > Tìm kiếm 
+                                    </button>
                                 </div>
                             </div>
 

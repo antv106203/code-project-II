@@ -355,6 +355,9 @@ logo-home-container a{
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    height: 370px; /* Thay đổi giá trị này theo yêu cầu */
+   overflow-x: auto; /* Thêm thanh cuộn ngang khi quá nhiều cell */
+  /* Ngăn các cell xuống dòng */
 }
 
 .cell{

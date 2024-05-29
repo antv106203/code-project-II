@@ -1,9 +1,9 @@
 import db from '../db.js';
 
 export const _dkimuonsach =async(req, res) =>{
-    const {id_nguoimuon, masach, matheloaisach, thoihan} = req.body;
+    const {id_nguoimuon, masach, matheloaisach, thoihan, soluong, ngaydangki} = req.body;
     console.log("body:",req.body);
-    db.query('INSERT INTO dkmuonsach(id_nguoimuon, masach, matheloaisach, thoihan) VALUES($1, $2, $3, $4)', [id_nguoimuon, masach, matheloaisach, thoihan],
+    db.query('INSERT INTO dkmuonsach(id_nguoimuon, masach, matheloaisach, thoihan, soluong, ngaydangki) VALUES($1, $2, $3, $4, $5)', [id_nguoimuon, masach, matheloaisach, thoihan, soluong, ngaydangki],
         (err, result) =>{
             if(err){
                 console.log("Loi tai cau lenh sql roi");

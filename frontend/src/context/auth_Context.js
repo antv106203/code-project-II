@@ -1,9 +1,12 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) =>{
+
+    //const navigate = useNavigate();
     const [currentUser, setCurrentUser] = useState(
         JSON.parse(localStorage.getItem("user")) || null
     );
@@ -73,7 +76,9 @@ export const AuthContextProvider = ({ children }) =>{
 
         //kiem tra xem phien dang nhap co het han chua
         if(expirationTime && Date.now() > Number(expirationTime)){
+            //navigate('/login');
             logout();
+            
         }
     }, [currentUser]);
 

@@ -9,9 +9,15 @@ import { useEffect } from 'react';
 // import banner1 from './imgae/banner1.png';
 // import banner2 from './imgae/banner2.png';
 import { useNavigate } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import MobileDatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
+import { FaCalendarAlt } from 'react-icons/fa'
+
 const DetailSach = () =>{
     const currentDate = new Date();
+    console.log(localStorage);
 
 
     
@@ -32,25 +38,31 @@ const DetailSach = () =>{
         masach: selected.masach,
         matheloaisach: selected.matheloaisach,
         thoihan: '',
+        soluong : 0,
+        ngaydangki : formattedDate
 
     })
-    console.log(muontrasach);
-    const handleChange  = (e) =>{
-        setMuontrasach((prev) =>({
-            ...prev,
-            thoihan: parseInt(e.target.value),
-        }))
-    }
+    console.log("Mượn trả sách: ",muontrasach);
+    const [chonNgay,setChonNgay] = useState(null);
+    
 
     const hanldeOnClick = async() =>{
-        const res = await axios.post('http://localhost:4000/api/muontrasach/dkimuonsach',muontrasach);
-        if(res.data === 'Thành công'){
-            alert("Đăng kí mượn sách thành công, chờ phê duyệt yêu cầu")
-            navigate('/user');
-            
+        if(muontrasach.thoihan === '' || muontrasach.soluong === 0){
+            alert("Bạn chưa điền đủ thông tin, xin kiểm tra lại")
         }
+
         else{
-            alert("có lỗi xảy ra");
+
+            const res = await axios.post('http://localhost:4000/api/muontrasach/dkimuonsach',muontrasach);
+            if(res.data === 'Thành công'){
+                alert("Đăng kí mượn sách thành công, chờ phê duyệt yêu cầu")
+                navigate('/user');
+                
+            }
+            else{
+                alert("có lỗi xảy ra");
+            }
+
         }
     }
     return(
@@ -198,22 +210,47 @@ const DetailSach = () =>{
                         <h4>Thông tin đăng kí mượn</h4>
                         <br/>
                         <h6>Tên sách : {selected.tensach}</h6>
-                        <h6>Số lượng : 1</h6>
-                        <div className='luachonthoihanmuon'>
-                            <label htmlFor="thoihanmuon"> <strong>Thời hạn mượn: </strong></label>
+                        <div className='soluong'>
+                            <label htmlFor="soluong"> <h6>Số lượng:</h6></label>
+                            <input 
+                                id='soluong'
+                                type='text'
+                                value={muontrasach.soluong}
+                                onChange={(e) =>{
+                                    setMuontrasach((prev) => ({
+                                        ...prev,
+                                        soluong: e.target.value
+                                    }))
+                                }}
 
-                            <select id='thoihanmuon' onChange={handleChange}>
-                                <option disabled selected> Lựa chọn</option>
-                                <option value='1'> 1 Tháng </option>
-                                <option value="2"> 2 Tháng </option>
-                                <option value="3"> 3 Tháng </option>
-                                <option value="4"> 4 Tháng </option>
-                            </select>
+                            />
                         </div>
+                        <div className='luachonthoihanmuon'>
+                            <label htmlFor="soluong"> <h6>Thời hạn:</h6></label>
+                            <DatePicker 
+                                selected={muontrasach.thoihan}
+                                onChange={date => {
+                                    const formattedDate = date.toISOString().substring(0, 10);
+                                    setMuontrasach(prev =>(
+                                        {
+                                            ...prev,
+                                            thoihan: formattedDate
+                                        }
+                                    ))
+                                }}
+                                dateFormat='yyyy-MM-dd'
+                                minDate={new Date()}
+                                showYearDropdown
+                                showMonthDropdown
+                            />
+                            
+                        </div>
+
+                        
                         <br />
 
-                        <h6>Ngày đăng kí mượn: {formattedDate}</h6>
-                        <br></br>
+                        <h6>Ngày đăng kí mượn: {muontrasach.ngaydangki}</h6>
+                        
 
                         <button className='dangkimuon-btn' onClick={hanldeOnClick}>Đăng kí mượn ngay</button>
 

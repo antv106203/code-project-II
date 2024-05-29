@@ -1,7 +1,7 @@
 
 import './TaiKhoan.css';
 //import iconsach from './imgae/logosach.png';
-import { useContext } from 'react';
+import { Children, useContext } from 'react';
 import { AuthContext } from '../../../context/auth_Context.js';
 //import logohome from './imgae/logohome.png';
 import { useState } from 'react';
@@ -16,12 +16,12 @@ const TaiKhoan =() =>{
     const [text , setText] =useState('');
     const [status, setStatus] =  useState('Đã mượn')
     const [data1, setData1] = useState(null);
-    const [chon, setChon] = useState();
+    const [chon, setChon] = useState(null);
 
     const [truyvan, setTruyvan] = useState({
         id_nguoimuon: currentUser.idtaikhoan,
     })
-    console.log(chon);
+    console.log("chọn" ,chon);
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -43,6 +43,15 @@ const TaiKhoan =() =>{
       }, [status]);
     console.log(status)
     console.log("Data: ",data1)
+
+
+    const handleOnTimKiem = () =>{
+        if(1){
+            const ds1  = data1.filter(sach => sach.tensach.toUpperCase().includes(text.toUpperCase()));
+            setData1(ds1);
+            setText('');
+        }
+    }
 
     return(
         <div className="header">
@@ -96,9 +105,8 @@ const TaiKhoan =() =>{
                             <div className='header-bottom-main-left'>
                                 <div className='left-chia'>
                                     <img src="https://salt.tikicdn.com/ts/upload/33/d0/37/6fef2e788f00a16dc7d5a1dfc5d0e97a.png" alt="icon-search" />
-                                    <input  type='text' placeholder='Nhập sách cần tìm kiếm' onChange={(e) =>{
-                                        setText(e.target.value);
-                                    }}/>
+                                    <input  type='text' placeholder='Nhập sách cần tìm kiếm' 
+                                    />
                                     <button> Tìm kiếm </button>
                                 </div>
                             </div>
@@ -146,17 +154,17 @@ const TaiKhoan =() =>{
                     <div className='Tieu_de'>
                         Danh mục 
                     </div>
-                    <div className='muc' key='a'  onClick={() =>{setStatus("Đã mượn")}}>
+                    <div className='muc' key='a'  onClick={() =>{setStatus("Đã mượn"); setChon(null)}}>
                         <i class="fa-solid fa-book"  style={{marginLeft: '10px' , color: '#21D375'}}></i>
                         Đã mượn
                     </div>
 
-                    <div className='muc' key='b' onClick={() =>{setStatus("Chờ phê duyệt")}}>
+                    <div className='muc' key='b' onClick={() =>{setStatus("Chờ phê duyệt"); setChon(null)}}>
                         <i class="fa-solid fa-book"  style={{marginLeft: '10px' , color: '#21D375'}}></i>
                         Chờ phê duyệt
                     </div>
 
-                    <div className='muc' key='c' onClick={() =>{setStatus("Đã phê duyệt")}}>
+                    <div className='muc' key='c' onClick={() =>{setStatus("Đã phê duyệt"); setChon(null)}}>
                         <i class="fa-solid fa-book"  style={{marginLeft: '10px' , color: '#21D375'}}></i>
                         Đã phê duyệt
                     </div>
@@ -169,10 +177,10 @@ const TaiKhoan =() =>{
 
                     <div className='thanhtimkiem'>
                         <img src="https://salt.tikicdn.com/ts/upload/33/d0/37/6fef2e788f00a16dc7d5a1dfc5d0e97a.png" alt="icon-search" />
-                        <input  type='text' placeholder='Nhập sách cần tìm kiếm' onChange={(e) =>{
+                        <input  type='text' placeholder='Nhập sách cần tìm kiếm' value={text} onChange={(e) =>{
                             setText(e.target.value);
                         }}/>
-                        <button> Tìm kiếm </button>
+                        <button onClick={handleOnTimKiem}> Tìm kiếm </button>
                     </div>
 
                     <div className='show-ds-list'>
@@ -194,9 +202,9 @@ const TaiKhoan =() =>{
                 </div>
                 
                 <div className='thongtinmuonsach'>
-                    <h5>Phiếu mượn sách</h5>
+                    <h5>{status === 'Đã mượn' ? 'Phiếu mượn sách' : 'Phiếu đăng kí mượn sách' }</h5>
                     <div className='tt'>
-                        {chon ? (
+                        { status === 'Đã mượn' ? chon ? (
                             <div className='c'>
                                 <h7> <strong>Mã phiếu: </strong> {chon.maphieu} </h7>
                                 <h7><strong>Mã sách: </strong> {chon.masach} </h7>
@@ -217,6 +225,18 @@ const TaiKhoan =() =>{
                                 }
                             </div>
                             ) : null
+                           : chon ? (
+                             <div className='c'>
+                                <h7> <strong>Mã phiếu: </strong> {chon.stt} </h7>
+                                <h7><strong>Mã sách: </strong> {chon.masach} </h7>
+                                <h7><strong>Tên sách: </strong> {chon.tensach} </h7>
+                                <h7><strong>Tác giả:  </strong> {chon.tacgia} </h7>
+                                <h7><strong>Thể loại: </strong> {chon.tentheloaisach} </h7>
+                                <h7><strong>Ngày đăng ký mượn:  </strong> {chon.ngaydangki.slice(0,10)} </h7>
+                                <h7><strong>Ngày trả dự kiến: </strong> {chon.thoihan.slice(0,10)} </h7>
+                                <h7><strong>Số lượng:  </strong> {chon.soluong} </h7>
+                             </div>
+                           ) : null
                         }
                     </div>
                 </div>
