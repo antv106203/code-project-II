@@ -90,8 +90,8 @@ const ThemTaiKhoan = () =>{
                         </div>
 
                         <div className="radio-group-select">
-                            <input type="radio" id="nu" name="vaitro" value="nu" onChange={handleChange}/>
-                            <label htmlFor="nu">Thủ Thư</label>
+                            <input type="radio" id="thuthu" name="vaitro" value="staff" onChange={handleChange}/>
+                            <label htmlFor="thuthu">Thủ Thư</label>
                         </div>
 
                         <div className="radio-group-select">

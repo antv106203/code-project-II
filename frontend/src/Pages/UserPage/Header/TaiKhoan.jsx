@@ -17,6 +17,7 @@ const TaiKhoan =() =>{
     const [status, setStatus] =  useState('Đã mượn')
     const [data1, setData1] = useState(null);
     const [chon, setChon] = useState(null);
+    const [taiKhoan, setTaiKhoan] = useState(false);
 
     const [truyvan, setTruyvan] = useState({
         id_nguoimuon: currentUser.idtaikhoan,
@@ -200,8 +201,9 @@ const TaiKhoan =() =>{
                         }
                     </div>
                 </div>
-                
+                { taiKhoan === false && 
                 <div className='thongtinmuonsach'>
+                    
                     <h5>{status === 'Đã mượn' ? 'Phiếu mượn sách' : 'Phiếu đăng kí mượn sách' }</h5>
                     <div className='tt'>
                         { status === 'Đã mượn' ? chon ? (
@@ -239,7 +241,9 @@ const TaiKhoan =() =>{
                            ) : null
                         }
                     </div>
+                    
                 </div>
+                }
                 
             </div>
         </div>

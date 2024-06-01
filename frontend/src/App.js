@@ -12,6 +12,7 @@ import Footer from './Components/Footer/Footer';
 import HeaderUser from './Pages/UserPage/Header/TrangChuUser';
 import DetailSach from './Pages/UserPage/DetailSach';
 import TaiKhoan from './Pages/UserPage/Header/TaiKhoan';
+import TrangChuStaff from './Pages/StaffPage/TrangChuStaff';
 
 
 
@@ -30,7 +31,8 @@ function App() {
         <Route path="/account/Them"  exact element={<Them />} />
         <Route path="/user"  exact element={<HeaderUser/>} />
         <Route path="/user/detailsach"  exact element={<DetailSach />} />
-        <Route path="/user/taikhoan"  exact element={<TaiKhoan/>} />   
+        <Route path="/user/taikhoan"  exact element={<TaiKhoan/>} /> 
+        <Route path="/staff"  exact element={<TrangChuStaff/>} /> 
       </Routes>
 
       

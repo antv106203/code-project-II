@@ -87,7 +87,7 @@ const Header = () =>{
                                     }}/>
                                     <button onClick={() => {
                                         setType(`Kết quả tìm kiếm cho ${text}`); console.log("type: ", type);
-                                        const ds2  = listSach.filter(sach => sach.tensach.toUpperCase().includes(text.toUpperCase()));
+                                        const ds2  = listSach.filter(sach => sach.tensach.toUpperCase().includes(text.toUpperCase()) || sach.tacgia.toUpperCase().includes(text.toUpperCase()));
                                         setDsSach(ds2);
                                         setText('');
                                     }}
@@ -202,7 +202,7 @@ const Header = () =>{
                                             navigate('/user/detailsach');
                                         }}
                                     >
-                                        <img src={item.image} style={{width: '240px' , height: '260px'}}/>
+                                        <img src={item.image} />
                                         <h6>{item.tensach}</h6>
                                         <h7>{item.tacgia}</h7>
                                     </div>

@@ -1,0 +1,45 @@
+.trangchustaff{
+    height: 750px;
+    background: White;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.navbar{
+    background-color: slategray;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+}
+
+.danhmuc-item{
+    color: white;
+    height: 100%;
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.danhmuc-item:hover{
+    background-color: #21D375;
+    cursor: pointer;
+}
+.danhmuc-item.active{
+    background-color: #21D375;
+}
+
+.center{
+    background: #E6E6E6;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    height: auto;
+}
+

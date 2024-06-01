@@ -229,6 +229,7 @@ logo-home-container a{
     display: flex;
     flex-direction: row;
     gap: 70px;
+    height: auto;
 }
 
 .danhmuc-container{
@@ -357,13 +358,10 @@ logo-home-container a{
     grid-auto-rows: auto;
     grid-gap: 20px;
     padding: 20px;
+    height: 100%;
 }
 
-.item-image {
-    width: 260px;
-    height: 260px; /* Đặt chiều cao bằng chiều rộng để tránh ảnh bị kéo dãn */
-    object-fit: cover; /* Giữ tỷ lệ ảnh và cắt phần dư */
-}
+
 
 .item{
     margin-left: 20px;
@@ -377,11 +375,18 @@ logo-home-container a{
     box-shadow: 0px 0px 10px 0px #21D375;
     display: flex;
     flex-direction: column;
-    height: 450px; 
+    height: 400px; 
+    width: 250px;
+    padding: 20px;
 }
 
 .item img{
-    margin: 20px;
+    
+    
+    width: 200px;
+    height: 200px; /* Đặt chiều cao bằng chiều rộng để tránh ảnh bị kéo dãn */
+    
+    
 }
 .item h5{
     margin-left: 10px;

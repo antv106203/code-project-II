@@ -49,6 +49,10 @@ const Login = () =>{
             else if (currentUser.vaitro === 'user'){
                 navigate("/user");
             }
+
+            else if(currentUser.vaitro === 'staff'){
+                navigate("/staff");
+            }
         } catch (error) {
             setError("Đã xảy ra lỗi khi đăng nhập");
         }
