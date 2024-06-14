@@ -13,6 +13,10 @@ import HeaderUser from './Pages/UserPage/Header/TrangChuUser';
 import DetailSach from './Pages/UserPage/DetailSach';
 import TaiKhoan from './Pages/UserPage/Header/TaiKhoan';
 import TrangChuStaff from './Pages/StaffPage/TrangChuStaff';
+import ChiTietSach from './Pages/StaffPage/ChiTietSach';
+import TrangChuManager from './Pages/ManagerPage/TrangChuManager';
+import ChiTietSach_manager from './Pages/ManagerPage/ChiTietSach_manager';
+
 
 
 
@@ -32,7 +36,10 @@ function App() {
         <Route path="/user"  exact element={<HeaderUser/>} />
         <Route path="/user/detailsach"  exact element={<DetailSach />} />
         <Route path="/user/taikhoan"  exact element={<TaiKhoan/>} /> 
-        <Route path="/staff"  exact element={<TrangChuStaff/>} /> 
+        <Route path="/staff"  exact element={<TrangChuStaff/>} />
+        <Route path="/staff/chitietSach"  exact element={<ChiTietSach/>} />
+        <Route path="/manager"  exact element={<TrangChuManager/>} />
+        <Route path="/manager/chitietSach"  exact element={<ChiTietSach_manager/>} />
       </Routes>
 
       

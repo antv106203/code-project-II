@@ -22,7 +22,8 @@ const TaiKhoan =() =>{
     const [truyvan, setTruyvan] = useState({
         id_nguoimuon: currentUser.idtaikhoan,
     })
-    console.log("chọn" ,chon);
+    //console.log("chọn" ,chon);
+    console.log("id:", truyvan.id_nguoimuon);
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -42,8 +43,8 @@ const TaiKhoan =() =>{
         };
         fetchData();
       }, [status]);
-    console.log(status)
-    console.log("Data: ",data1)
+    // console.log(status)
+    // console.log("Data: ",data1)
 
 
     const handleOnTimKiem = () =>{

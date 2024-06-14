@@ -17,7 +17,7 @@ import { FaCalendarAlt } from 'react-icons/fa'
 
 const DetailSach = () =>{
     const currentDate = new Date();
-    console.log(localStorage);
+    //console.log(localStorage);
 
 
     
@@ -29,10 +29,11 @@ const DetailSach = () =>{
 
     // Tạo chuỗi ngày tháng năm ở định dạng "yyyy-mm-dd"
     const formattedDate = `${year}-${month}-${day}`;
-    console.log(formattedDate)
+    //console.log(formattedDate)
     const navigate = useNavigate();
     const [text , setText] =useState('');
-    const {listSach, listTheLoaiSach, currentUser, selected, setSelected} = useContext(AuthContext);
+    const { currentUser} = useContext(AuthContext);
+    const selected = JSON.parse(localStorage.getItem("selectedSach_user"))
     const [muontrasach, setMuontrasach] = useState({
         id_nguoimuon : currentUser.idtaikhoan,
         masach: selected.masach,
@@ -42,13 +43,17 @@ const DetailSach = () =>{
         ngaydangki : formattedDate
 
     })
-    console.log("Mượn trả sách: ",muontrasach);
+    //console.log("Mượn trả sách: ",muontrasach);
+    //console.log("loại", typeof(muontrasach.soluong))
     const [chonNgay,setChonNgay] = useState(null);
     
 
     const hanldeOnClick = async() =>{
         if(muontrasach.thoihan === '' || muontrasach.soluong === 0){
             alert("Bạn chưa điền đủ thông tin, xin kiểm tra lại")
+        }
+        else if(muontrasach.soluong > selected.soluongconlai){
+            alert(`số lượng còn lại là ${selected.soluongconlai} quyển. Bạn đã mượn quá số quyển còn lại`);
         }
 
         else{
@@ -214,12 +219,12 @@ const DetailSach = () =>{
                             <label htmlFor="soluong"> <h6>Số lượng:</h6></label>
                             <input 
                                 id='soluong'
-                                type='text'
+                                type='number'
                                 value={muontrasach.soluong}
                                 onChange={(e) =>{
                                     setMuontrasach((prev) => ({
                                         ...prev,
-                                        soluong: e.target.value
+                                        soluong: parseInt(e.target.value),
                                     }))
                                 }}
 

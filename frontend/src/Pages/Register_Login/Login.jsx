@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import './CSS/Login.css'
+import './Login.css';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/auth_Context';
 import {useNavigate, Link} from 'react-router-dom'
+import { useEffect } from 'react';
 
 
 const Login = () =>{
@@ -38,10 +39,12 @@ const Login = () =>{
         
         if(!input.tendangnhap || !input.matkhau){
             setError("Vui lòng nhập tên đăng nhập và mật khẩu");
-            console.log("loi")
+            console.log("loi");
+            alert("vui log nhap tai khoan va mat khau");
             return;
         }
-        try {
+         else{
+            try {
             await login(input);
             if(currentUser.vaitro === 'admin'){
                 navigate("/account");
@@ -53,30 +56,42 @@ const Login = () =>{
             else if(currentUser.vaitro === 'staff'){
                 navigate("/staff");
             }
+            else if(currentUser.vaitro === 'manager'){
+                navigate('/manager');
+            }
         } catch (error) {
-            setError("Đã xảy ra lỗi khi đăng nhập");
+            //alert("sai tai khoan hoac mat khau");
+            setError("Loi khi dang nhap")
         }
     }
-
+    }
+    //localStorage.removeItem('user');
     
-
+    // useEffect(() => {
+    //     // Xoá hết localStorage
+    //     localStorage.clear();
+    // }, []);
+    console.log(localStorage);
     return(
         <div className='login'>
-            <div className="center">
-                <h1>Đăng Nhập</h1>
-                <form>
-                    <div className="txt_field">
-                        <input type='text' name='tendangnhap' onChange={handleChange} required/>
-                        <label>Tên Đăng Nhập</label>
-                    </div>
+            <div className='kc'>
+                <form className='form-login' style={{width: '400px', height:'450px'}}>
+                    <h1>Đăng Nhập</h1>
+                    
+                        <div className="form-field">
+                            <i className='fas fa-user'></i>
+                            <input type='text' name='tendangnhap' onChange={handleChange} required placeholder='Tên đăng nhập'/>
+                            
+                        </div>
 
-                    <div className="txt_field">
-                        <input type='password' name='matkhau' onChange={handleChange} required/>
-                        <label>Mật Khẩu</label>
-                    </div>
+                        <div className="form-field">
+                            <i className='fas fa-lock'></i>
+                            <input type='password' name='matkhau' onChange={handleChange} required placeholder='Mật khẩu'/>
+                            
+                        </div>
 
-                    <div className="pass">Quên mật khẩu?</div>
-                    <input type='submit' value="Đăng Nhập" onClick={handleSubmit}/>
+                        
+                        <button onClick={handleSubmit}> Đăng nhập </button>
                 </form>
             </div>
         </div>

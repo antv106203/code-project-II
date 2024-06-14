@@ -1,5 +1,5 @@
 
-import './Header.css';
+import './TrangChuUser.css';
 import iconsach from './imgae/logosach.png';
 import { useContext } from 'react';
 import { AuthContext } from '../../../../src/context/auth_Context';
@@ -12,9 +12,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const Header = () =>{
     const navigate = useNavigate();
-    const {listSach, listTheLoaiSach, currentUser, selected, setSelected,logout} = useContext(AuthContext);
+    const {listSach, listTheLoaiSach, currentUser,logout} = useContext(AuthContext);
     const [type, setType] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
     const [text , setText] =useState('');
     
     
@@ -25,8 +24,9 @@ const Header = () =>{
     }
     
 
-    console.log("moi vaotrang selected là:", selected);
-    console.log("danh sách sách:", dsSach);
+    //console.log("moi vaotrang selected là:", selected);
+    //console.log("danh sách sách:", dsSach);
+    console.log(currentUser);
    
     return(
             <div className='header'>
@@ -64,6 +64,8 @@ const Header = () =>{
                             <i class="fa-solid fa-envelope" style={{color: 'white' , marginRight: '10px'}}></i>
                             an106203h@gmail.com
                         </a>
+
+
                     </div>
 
                 </div>
@@ -168,7 +170,7 @@ const Header = () =>{
                             }
                     </div>
 
-                    <div className='sanpham-container'>
+                    <div className='sanpham_container'>
                         <div className='xinchao'>
                             <h2 >
                                 Thư viện Sách
@@ -185,20 +187,22 @@ const Header = () =>{
                             </div>
                         </div>
 
-                        <div className='sanpham'>
+                        <div className='sanpham1'>
                             <div className='tieude_tatca'>
                                 
                                     <h5>{type ? type : "Tất cả sách"}</h5>
                                 
                             </div>
 
-                            <div className='item-container'>
+                            <div className='tatcasach'>
                                 {dsSach && dsSach.length > 0 &&
                                  dsSach.map((item, index) =>(
                                     <div className='item' key={index} 
                                         onClick={(e) =>{
-                                            setSelected(item);
-                                            console.log(selected);
+                                            //setSelected(item);
+                                            //console.log(selected);
+                                            localStorage.removeItem("selectedSach_user");
+                                            localStorage.setItem("selectedSach_user", JSON.stringify(item));
                                             navigate('/user/detailsach');
                                         }}
                                     >

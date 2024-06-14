@@ -23,7 +23,8 @@ app.use("/api/sach", sachRoutes);
 
 import muontrasachRoutes from './routes/muontrasach.js'
 app.use("/api/muontrasach",muontrasachRoutes);
-
+import thongkeRoutes from './routes/thongke.js'
+app.use("/api/thongke", thongkeRoutes);
 app.get("/api/v1/taikhoan", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM ACCOUNT");

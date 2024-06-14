@@ -1,45 +1,11 @@
-.trangchustaff{
+.TrangChuManager{
     height: 750px;
     background: #E6E6E6;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-.navbar{
-    background-color: slategray;
-    display: flex;
-    flex-direction: row;
-    padding-left: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    justify-content: flex-start;
-    align-items: center;
-    height: 60px;
-}
-.Dangxuat{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-left: 900px;
-    height: 100%;
-    align-items: center;
-}
-
-.Dangxuat:hover{
-    background: #21D375;
-}
-
-.Dangxuat i{
-    font-size: 20px;
-    margin-top: 10px;
-    color: #FFFFFF;
-}
-.Dangxuat h7{
-    color: #FFFFFF;
-    margin-top: 5px;
-}
-
-.danhmuc-item{
+.danhmuc-item1{
     color: white;
     height: 100%;
     width: 150px;
@@ -48,15 +14,36 @@
     padding: 20px;
 }
 
-.danhmuc-item:hover{
+.danhmuc-item1:hover{
     background-color: #21D375;
     cursor: pointer;
 }
-.danhmuc-item.active{
+.danhmuc-item1.active{
     background-color: #21D375;
 }
+.dangxuat{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 900px;
+    height: 100%;
+    align-items: center;
+}
 
-.center{
+.dangxuat:hover{
+    background: #21D375;
+}
+
+.dangxuat i{
+    font-size: 20px;
+    margin-top: 10px;
+    color: #FFFFFF;
+}
+.dangxuat h7{
+    color: #FFFFFF;
+    margin-top: 5px;
+}
+.trangchustaff_center{
     background: #E6E6E6;
     width: 100%;
     display: flex;
@@ -206,142 +193,83 @@
     outline: none;
     box-shadow: none;
 }
-
-.ds_show1{
-    background: #ffffff;
-    
-    width: 100%;
+.thongke{
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    height: 400px; /* Thay đổi giá trị này theo yêu cầu */
-   overflow-x: auto; /* Thêm thanh cuộn ngang khi quá nhiều cell */
-  /* Ngăn các cell xuống dòng */
-}
-
-.cell1{
-    display: flex;
-    flex-direction: row;
-    gap :10px;
-    border: #21D375  0.2px;
-    box-shadow: 0px 0px 10px 0px #21D375;
-    border-radius: 10px;
-}
-
-.cell1 img{
-    width: 80px;
-    height: 100px;
-}
-
-.cell-con1{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.cell1:hover{
-    transform: scale(1.05); /* Phóng to khi hover */
-    cursor: pointer;
-}
-.show-ds1{
-    width: 520px;
-    display: flex;
-    flex-direction: column;
+    height: 1000px;
+    width: 1100px;
     background: #E6E6E6;
-    gap: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    margin-top: 0px;
-    height: 495px;
-    box-shadow: 0px 0px 10px 0px slategray;
+    border: #21D375;
+    box-shadow:  0px 0px 10px 0px slategray;
 }
-
-.show-ds-tieude1{
-    width: 100%;
+.tieudethongke{
     background: #21D375;
-    
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    align-items: center;
-}
-
-.show-ds-tieude1 h5{
-    margin-left: 150px;
-}
-
-.thongtinmuonsach{
-    margin-top: 0px;
-    width: 550px;
-    height: 760px;
-    
-}
-
-.tinhtrangsach{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    
-}
-
-.tinhtrangsach input {
-    width: 350px;
-    height: 30px;
-    border: none;
-    border-bottom: 2px solid #21D375;
-    outline: none;
-    
-    
-}
-
-.tinhtrangsach input:focus{
-    border: none;
-    border-bottom: 2px solid #21D375;
-}
-
-.tinhtrangsachkhitra input{
-    width: 350px;
-    height: 30px;
-    border: none;
-    border-bottom: 2px solid #21D375;
-    outline: none;
-    margin-left: 10px;
-}
-
-.tinhtrangsachkhitra input:focus{
-    border: none;
-    border-bottom: 2px solid #21D375;
-}
-.trasachbtn{
-    background: #21D375;
-    width: 300px;
-    height: 40px;
-    margin-left: 120px;
-    border: none;
-}
-
-.trasachbtn:hover{
-    transform: scale(1.05); /* Phóng to khi hover */
-    cursor: pointer;
-}
-
-.ttnhanvien{
-    background: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    margin-left: 380px;
-    width: 800px;
-    height: 600px;
-    gap: 10px;
-    padding: 20px;
-}
-
-.tieude_tt{
-    background-color: #21D375;
-    height: 50px;
     align-items: center;
     text-align: center;
+    height: 50px;
     align-content: center;
-    margin-bottom: 20px;
+    
+}
+
+.bieudo {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    gap: 20px;
+}
+.bieudo TableContainer{
+    width: 500px;
+    height: 500px;
+}
+
+.bieudo1{
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    
+    
+}
+
+.thongketheothoigian{
+    display: flex;
+    flex-direction: column;
+}
+.nhapyeucau{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nhapyeucau_thoigian{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.thongke_btn{
+    background: #21D375;
+    border: none;
+    height: 30px;
+    width: 100px;
+    margin-left: 150px;
+}
+.lamlaibtn{
+    background: aquamarine;
+    border: none;
+    height: 30px;
+    width: 100px;
+    
+}
+
+.tungay{
+    gap: 10px
+}
+
+.thongketheoyeucau{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

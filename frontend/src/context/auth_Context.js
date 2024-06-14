@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+
 
 export const AuthContext = createContext();
 
@@ -8,42 +8,23 @@ export const AuthContextProvider = ({ children }) =>{
 
     //const navigate = useNavigate();
     const [currentUser, setCurrentUser] = useState(
-        JSON.parse(localStorage.getItem("user")) || null
+        JSON.parse(sessionStorage.getItem("user")) || null
     );
 
     const [listSach, setListSach] = useState(null);
     const [listTheLoaiSach, setListTheLoaiSach] = useState(null);
-    const [selected, setSelected] = useState();
     
     
-    const [inf, setInf] = useState(null);
 
     const login =  async (input) =>{
         const res = await axios.post("http://localhost:4000/api/auth/login", input);
         setCurrentUser(res.data);
-
-        // thiết lập thời gian tồn tại của phiên đăng nhập
-        const sessionTimeout = 3600000;
-
-        // Lưu thời gian hết hạn của phiên đăng nhập vào localStorage
-        const expirationTime = Date.now() + sessionTimeout;
-        localStorage.setItem("expirationTime", expirationTime);
     };
-
-    const an = async (input) =>{
-        const res = await axios.post(`http://localhost:4000/api/${input}`,input);
-        setInf(res.data);
-
-    }
 
 
     const logout = async () =>{
         await axios.post("http://localhost:4000/api/auth/logout");
         setCurrentUser(null);
-        localStorage.removeItem("expirationTime");
-        localStorage.removeItem("user");
-        
-
     };
 
     useEffect(() =>{
@@ -70,20 +51,12 @@ export const AuthContextProvider = ({ children }) =>{
       
         fetchListTheLoaiSach();
         
-        localStorage.setItem("user", JSON.stringify(currentUser));
+        sessionStorage.setItem("user", JSON.stringify(currentUser));
 
-        const expirationTime = localStorage.getItem("expirationTime");
-
-        //kiem tra xem phien dang nhap co het han chua
-        if(expirationTime && Date.now() > Number(expirationTime)){
-            //navigate('/login');
-            logout();
-            
-        }
     }, [currentUser]);
 
     return (
-        <AuthContext.Provider value={{ currentUser, login, logout,an , listSach, setListSach, listTheLoaiSach, setListTheLoaiSach, selected, setSelected}} >
+        <AuthContext.Provider value={{ currentUser, login, logout, listSach, setListSach, listTheLoaiSach, setListTheLoaiSach}} >
             {children}
         </AuthContext.Provider>
     );
